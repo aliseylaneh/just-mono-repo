@@ -3,8 +3,6 @@ import time
 
 import pika
 
-global counter
-
 
 def callback(ch, method, properties: pika.BasicProperties, body):
     processing_time = random.randint(1, 6)
