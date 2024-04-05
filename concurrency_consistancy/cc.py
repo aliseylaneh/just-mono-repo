@@ -49,6 +49,7 @@ def user_two(database, process_lock: multiprocessing.Lock):
 
 
 if __name__ == '__main__':
+    # TODO contains error
     manager = multiprocessing.Manager()
     DATABASE = manager.list([
         {"ID": 5545, "BALANCE": 10, "VERSION": 1}
