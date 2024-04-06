@@ -23,7 +23,7 @@ async def get_flag(client: AsyncClient, cc: str) -> bytes:
 
 async def download_one(client: AsyncClient, cc: str):
     image = await get_flag(client=client, cc=cc)
-    save_flag(image, f"{cc}.gif")
+    asyncio.as_completed([save_flag(image, f"{cc}.gif")])
     print(cc, end=" | ", flush=True)
     return cc
 
