@@ -28,9 +28,10 @@ async def main():
     # awaitable_one = asyncio.Task(task_one())
     # awaitable_two = asyncio.Task(task_two())
     # print(type(awaitable_one))
-    for coro in asyncio.as_completed([task_one(), task_two()]):
-        value = await coro
-        print(value)
+    await asyncio.gather(*[task_one(), task_two()])
+    # for coro in asyncio.as_completed([task_one(), task_two()]):
+    #     value = await coro
+    #     print(value)
 
 
 if __name__ == "__main__":
