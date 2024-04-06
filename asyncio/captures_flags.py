@@ -24,7 +24,7 @@ async def get_flag(client: AsyncClient, cc: str) -> bytes:
 async def download_one(client: AsyncClient, cc: str):
     image = await get_flag(client=client, cc=cc)
     save_flag(image, f"{cc}.gif")
-    print(cc, end="", flush=True)
+    print(cc, end=" | ", flush=True)
     return cc
 
 
@@ -33,18 +33,19 @@ def download_many(cc_list: list[str]) -> int:
 
 
 async def supervisor(cc_list: list[str]):
-    async with AsyncClient() as client:  # Open a httpx async client connection
-        """
-        Asynchronous HTTP client operations in httpx are methods of AsyncClient,
-        which is also an asynchronous context manager: a context manager with asyn‐
-        chronous setup and teardown methods
     """
+    Asynchronous HTTP client operations in httpx are methods of AsyncClient,
+    which is also an asynchronous context manager: a context manager with asyn‐
+    chronous setup and teardown methods
+    """
+    async with AsyncClient() as client:  # Open a httpx async client connection
+        client.__aenter__
         to_do = [
             download_one(client, cc) for cc in sorted(cc_list)
         ]  # create a list of coroutines of download_one() coroutine
         res = await asyncio.gather(
             *to_do
-        )  # gathering task and scheduling them to run / expectiong the reponse
+        )  # gathering task and scheduling them to run / wait and expects the reponse
     return len(res)
 
 
