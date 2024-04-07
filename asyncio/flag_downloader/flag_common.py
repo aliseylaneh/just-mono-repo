@@ -16,12 +16,12 @@ DEFAULT_CONCUR_REQ = 1
 MAX_CONCUR_REQ = 1
 
 SERVERS = {
-    "REMOTE": "https://www.fluentpython.com/data/flags",
+    "REMOTE": "https://www.fluentpython.com/data/flags/",
     "LOCAL": "http://localhost:8000/flags",
     "DELAY": "http://localhost:8001/flags",
     "ERROR": "http://localhost:8002/flags",
 }
-DEFAULT_SERVER = "LOCAL"
+DEFAULT_SERVER = "REMOTE"
 
 DEST_DIR = Path("downloaded")
 COUNTRY_CODES_FILE = Path("country_codes.txt")

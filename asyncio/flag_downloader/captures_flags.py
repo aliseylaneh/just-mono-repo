@@ -39,7 +39,6 @@ async def supervisor(cc_list: list[str]):
     chronous setup and teardown methods
     """
     async with AsyncClient() as client:  # Open a httpx async client connection
-        client.__aenter__
         to_do = [
             download_one(client, cc) for cc in sorted(cc_list)
         ]  # create a list of coroutines of download_one() coroutine
