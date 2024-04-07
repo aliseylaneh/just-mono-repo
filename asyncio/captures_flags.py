@@ -10,7 +10,7 @@ DEST_DIR = Path("downloaded")
 
 
 # Base functionality
-def save_flag(img: bytes, filename: str) -> None:
+async def save_flag(img: bytes, filename: str) -> None:
     (DEST_DIR / filename).write_bytes(img)
 
 
@@ -23,7 +23,7 @@ async def get_flag(client: AsyncClient, cc: str) -> bytes:
 
 async def download_one(client: AsyncClient, cc: str):
     image = await get_flag(client=client, cc=cc)
-    save_flag(image, f"{cc}.gif")
+    asyncio.as_completed([save_flag(image, f"{cc}.gif")])
     print(cc, end=" | ", flush=True)
     return cc
 
