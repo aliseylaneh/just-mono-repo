@@ -10,7 +10,7 @@ DEST_DIR = Path("downloaded")
 
 
 # Base functionality
-def save_flag(img: bytes, filename: str) -> None:
+async def save_flag(img: bytes, filename: str) -> None:
     (DEST_DIR / filename).write_bytes(img)
 
 
