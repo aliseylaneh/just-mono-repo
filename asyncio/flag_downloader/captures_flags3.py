@@ -14,7 +14,7 @@ MAX_CONCUR_REQ = 1000
 
 
 async def get_country(client: httpx.AsyncClient, base_url: str, cc: str) -> str:
-    url = f"{base_url}/cc/metadata.json".lower()
+    url = f"{base_url}/{cc}/metadata.json".lower()
     response = await client.get(url=url, timeout=3.1, follow_redirects=True)
     response.raise_for_status()
     metadata = response.json()
