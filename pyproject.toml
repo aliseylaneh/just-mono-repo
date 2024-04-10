@@ -2,12 +2,15 @@
 name = "poetry-tips"
 version = "0.4.0"
 description = ""
-authors = ["aliseylaneh@gmail.com"]
+authors = ["Ali Seylaneh", "aliseylaneh@gmail.com"]
+package-mode = false
 [tool.poetry.dependencies]
 python = "^3.10.12"
 pika = "^1.3.2"
 httpx = "^0.27.0"
 tqdm = "^4.66.2"
+fastapi = "^0.110.1"
+uvicorn = "^0.29.0"
 
 [build-system]
 requires = ["poetry-core"]
