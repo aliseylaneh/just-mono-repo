@@ -11,6 +11,7 @@ httpx = "^0.27.0"
 tqdm = "^4.66.2"
 fastapi = "^0.110.1"
 uvicorn = "^0.29.0"
+curio = "^1.6"
 
 [build-system]
 requires = ["poetry-core"]

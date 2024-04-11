@@ -70,6 +70,19 @@ files = [
 ]
 
 [[package]]
+name = "curio"
+version = "1.6"
+description = "Curio"
+optional = false
+python-versions = ">= 3.7"
+files = [
+    {file = "curio-1.6.tar.gz", hash = "sha256:562a586db20216ba7d2be8263deb9eb079e56048f9b8906d11d5f45aa81c5247"},
+]
+
+[package.extras]
+test = ["Sphinx", "pytest"]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.2.0"
 description = "Backport of PEP 654 (exception groups)"
@@ -376,4 +389,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10.12"
-content-hash = "167d2039b2ea815bd3c7f6851ae62fac3aa944041364ff02357bdd4a048e8d4d"
+content-hash = "144cd857d437828dd9b1bd01bdc70e48ed3a2098aad450e6f823c2113eb6ae46"
