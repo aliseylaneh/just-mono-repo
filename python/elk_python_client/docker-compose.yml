@@ -1,0 +1,19 @@
+version: '2.27.0'
+
+services:
+
+  elasticsearch:
+    image: elasticsearch:8.13.0
+    container_name: elasticsearch_lab
+    restart: always
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - ES_JAVA_OPTS = "-Xmx256m -Xms256m"
+      - discovery.type=single-node
+    volumes:
+      - elastic-data:/usr/share/elasticsearch/data
+
+volumes:
+  elastic-data:
