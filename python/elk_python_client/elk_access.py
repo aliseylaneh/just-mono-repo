@@ -4,9 +4,7 @@ from elasticsearch import Elasticsearch
 
 if __name__ == "__main__":
     client = Elasticsearch(
-        "https://localhost:9200",
-        basic_auth=("elastic", "ajhD8*c6qwWj4KjX=ybM"),
-        verify_certs=False,
+        "http://localhost:9200",
     )
     doc = {
         "author": "author_name",
