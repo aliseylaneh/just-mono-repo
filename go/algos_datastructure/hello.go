@@ -3,5 +3,9 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hellow GO !!")
+	var greetingText string = "Hello Go"
+	counter := 10
+	for i := 0; i < counter; i++ {
+		fmt.Println(greetingText)
+	}
 }
