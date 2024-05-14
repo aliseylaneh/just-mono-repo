@@ -24,7 +24,11 @@ async def find_all(
     pagination_index: int,
 ) -> list[dict[str, Any]]:
     resp = await client.search(
-        index=index_name, size=pagination_size, from_=pagination_index, pretty=True
+        index=index_name,
+        size=pagination_size,
+        from_=pagination_index,
+        pretty=True,
+        sort="@timestamp",
     )
     result = []
     for item in resp.body["hits"]["hits"]:
@@ -38,7 +42,7 @@ async def main():
         "http://localhost:9200",
     )
     doc = {
-        "author": "author_name",
+        "author": "Jack",
         "description": "This book was published by ... in 2008",
     }
     index_name: str = "authors"
@@ -62,8 +66,8 @@ async def main():
     """
 
     async with client:
-        await create_index(client=client, index_name=index_name, mappings=mappings)
-        await insert(client=client, identifier=2, index_name=index_name, body=doc)
+        # await create_index(client=client, index_name=index_name, mappings=mappings)
+        # await insert(client=client, identifier=3, index_name=index_name, body=doc)
         await find_all(
             client=client, index_name=index_name, pagination_index=0, pagination_size=2
         )
