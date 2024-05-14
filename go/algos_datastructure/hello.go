@@ -2,21 +2,32 @@ package main
 
 import "fmt"
 
+func greetings() {
+	var greetingText string = "Hello Go"
+	counter := 10
+	for i := 0; i < 5; i++ {
+		counter += 10
+		fmt.Println(greetingText)
+	}
+	finalCounter := counter
+	print(finalCounter)
+}
+
 func concatinate_types(defaultDataBaseUrl string, defaultDatabaseUserAndPort string) string {
 	concatinated := defaultDataBaseUrl + defaultDatabaseUserAndPort
 	return concatinated
 }
 
+func rune_bool_byte() {
+	var emoji rune = 'g'
+	var just_a_byte byte = '3'
+	just_a_bool := false
+	fmt.Println(emoji, just_a_byte, just_a_bool)
+}
+func print_formatting() {
+	my_value := "WoW"
+	fmt.Printf("Your value is %v", my_value)
+}
 func main() {
-	// var greetingText string = "Hello Go"
-	// counter := 10
-	// for i := 0; i < 5; i++ {
-	// 	counter += 10
-	// 	fmt.Println(greetingText)
-	// }
-	// finalCounter := counter
-	// print(finalCounter)
-	defaultDataBaseUrl := "psql:localhost@"
-	var defaultDatabaseUserAndPort string = "admin:5329"
-	fmt.Println(concatinate_types(defaultDataBaseUrl, defaultDatabaseUserAndPort))
+	rune_bool_byte()
 }
