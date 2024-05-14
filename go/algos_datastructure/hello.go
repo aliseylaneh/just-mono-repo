@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
+)
 
 func greetings() {
 	var greetingText string = "Hello Go"
@@ -31,6 +35,9 @@ func print_formatting() {
 	im_sprint_f := fmt.Sprintf("%v %v", my_value, another_value)
 	fmt.Println(im_sprint_f)
 }
+func usingAnotherPackage() {
+	fmt.Println(just_a_package.GlobalVariable)
+}
 func main() {
-	print_formatting()
+	usingAnotherPackage()
 }
