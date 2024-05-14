@@ -15,8 +15,6 @@ services:
       - xpack.security.enabled= false
       - xpack.security.enrollment.enabled= false
 
-    volumes:
-      - elastic-data:/usr/share/elasticsearch/data
 
 volumes:
   elastic-data:

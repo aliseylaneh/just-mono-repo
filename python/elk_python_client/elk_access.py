@@ -4,6 +4,10 @@ import asyncio
 from typing import Any
 
 
+async def create_index(client: AsyncElasticsearch, index_name: str, mappings: str):
+    await client.indices.create(index=index_name, body=mappings)
+
+
 async def insert(
     client: AsyncElasticsearch, index_name: str, identifier: int, body: dict[str, Any]
 ):
@@ -35,13 +39,33 @@ async def main():
     )
     doc = {
         "author": "author_name",
-        "text": "Interesting content...",
-        "timestamp": datetime.now(),
+        "description": "This book was published by ... in 2008",
     }
+    index_name: str = "authors"
+    mappings = """
+    {
+        "mappings": {
+            "properties": {
+                "@timestamp": {
+                    "type": "date"
+                },
+                "author": {
+                    "type": "keyword"
+                },
+                "description": {
+                    "type": "text"
+                }
+            }
+        }
+    }
+
+    """
+
     async with client:
-        await insert(client=client, identifier=1, index_name="books", body=doc)
+        await create_index(client=client, index_name=index_name, mappings=mappings)
+        await insert(client=client, identifier=2, index_name=index_name, body=doc)
         await find_all(
-            client=client, index_name="books", pagination_index=0, pagination_size=2
+            client=client, index_name=index_name, pagination_index=0, pagination_size=2
         )
 
 
