@@ -1,13 +1,11 @@
 from datetime import datetime
-from random import random
-import string
 from elasticsearch import Elasticsearch
 
 if __name__ == "__main__":
     client = Elasticsearch(
         "http://localhost:9200",
     )
- 
+
     doc = {
         "author": "author_name",
         "text": "Interesting content...",
