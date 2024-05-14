@@ -14,6 +14,7 @@ fastapi = "^0.110.1"
 uvicorn = "^0.29.0"
 curio = "^1.6"
 elasticsearch = "8.13.0"
+aiohttp = "^3.9.5"
 
 [build-system]
 requires = ["poetry-core"]
