@@ -26,8 +26,11 @@ func rune_bool_byte() {
 }
 func print_formatting() {
 	my_value := "WoW"
+	another_value := "Wowwww"
 	fmt.Printf("Your value is %v", my_value)
+	im_sprint_f := fmt.Sprintf("%v %v", my_value, another_value)
+	fmt.Println(im_sprint_f)
 }
 func main() {
-	rune_bool_byte()
+	print_formatting()
 }
