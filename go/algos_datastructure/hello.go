@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 
 	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
 )
@@ -43,10 +45,21 @@ func usingAnotherPackage() {
 
 var reader = bufio.NewReader(os.Stdin)
 
-func testingBufferIo() {
+func testingBufferIo() string {
 	userInput, _ := reader.ReadString('\n')
-	fmt.Println(userInput)
+	return userInput
+}
+func convertToFloatAndPrint(sentence string) {
+	sentence = strings.Replace(sentence, "\n", "", -1)
+	float_number, exception := strconv.ParseFloat(sentence, 64)
+	if exception != nil {
+		fmt.Println(float_number, exception)
+		return
+	}
+	fmt.Println(float_number)
 }
 func main() {
+	userInput := testingBufferIo()
+	convertToFloatAndPrint(userInput)
 
 }
