@@ -19,18 +19,18 @@ func greetings() {
 	print(finalCounter)
 }
 
-func concatinate_types(defaultDataBaseUrl string, defaultDatabaseUserAndPort string) string {
+func concatinateTypes(defaultDataBaseUrl string, defaultDatabaseUserAndPort string) string {
 	concatinated := defaultDataBaseUrl + defaultDatabaseUserAndPort
 	return concatinated
 }
 
-func rune_bool_byte() {
+func runeBoolByte() {
 	var emoji rune = 'g'
 	var just_a_byte byte = '3'
 	just_a_bool := false
 	fmt.Println(emoji, just_a_byte, just_a_bool)
 }
-func print_formatting() {
+func printFormatting() {
 	my_value := "WoW"
 	another_value := "Wowwww"
 	fmt.Printf("Your value is %v", my_value)
@@ -48,5 +48,5 @@ func testingBufferIo() {
 	fmt.Println(userInput)
 }
 func main() {
-	testingBufferIo()
+
 }
