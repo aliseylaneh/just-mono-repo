@@ -59,7 +59,5 @@ func convertToFloatAndPrint(sentence string) {
 	fmt.Println(float_number)
 }
 func main() {
-	userInput := testingBufferIo()
-	convertToFloatAndPrint(userInput)
 
 }
