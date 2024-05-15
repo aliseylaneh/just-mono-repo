@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 
 	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
 )
@@ -38,6 +40,13 @@ func print_formatting() {
 func usingAnotherPackage() {
 	fmt.Println(just_a_package.GlobalVariable)
 }
+
+var reader = bufio.NewReader(os.Stdin)
+
+func testingBufferIo() {
+	userInput, _ := reader.ReadString('\n')
+	fmt.Println(userInput)
+}
 func main() {
-	usingAnotherPackage()
+	testingBufferIo()
 }
