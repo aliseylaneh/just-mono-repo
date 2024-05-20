@@ -84,6 +84,6 @@ type User struct {
 }
 
 func main() {
-	var newUser User = User{firstName: "Ali", lastName: "Seylaneh", birthDate: "1998", createdAt: time.Now()}
+	var newUser User = User{firstName: "Franklin", lastName: "Jay", birthDate: "1998", createdAt: time.Now()}
 	fmt.Println(newUser)
 }
