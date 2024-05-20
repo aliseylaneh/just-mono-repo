@@ -83,8 +83,9 @@ type User struct {
 	createdAt time.Time
 }
 
-func (user User) printUserDetails(justAnArg string) {
+func (user *User) printUserDetails(justAnArg string) {
 	fmt.Println(justAnArg)
+	user.firstName = "Jacob"
 	fmt.Printf("My name is %v and my last name is %v, my birthdate is %v\n", user.firstName, user.lastName, user.birthDate)
 }
 func newUser(firstName string, lastName string, birthDate string) *User {
@@ -94,4 +95,5 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 func main() {
 	var newUser *User = newUser("Franklin", "Joyce", "1989")
 	newUser.printUserDetails("This is test")
+	fmt.Println(newUser)
 }
