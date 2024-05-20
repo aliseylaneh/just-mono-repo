@@ -58,6 +58,22 @@ func convertToFloatAndPrint(sentence string) {
 	}
 	fmt.Println(float_number)
 }
+func changingValueByPoint(age *string) {
+	*age = "70"
+	fmt.Println(*age)
+}
+func understandingPointers() {
+	age := "23"
+	fmt.Println(age)
+	changingValueByPoint(&age)
+	var userAge *string
+	userAge = &age
+	*userAge = "28"
+	fmt.Println(age)
+	*userAge = "665883"
+	fmt.Println(*userAge)
+	fmt.Println(age)
+}
 func main() {
-
+	understandingPointers()
 }
