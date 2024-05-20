@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"time"
 
 	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
 )
@@ -74,6 +75,15 @@ func understandingPointers() {
 	fmt.Println(*userAge)
 	fmt.Println(age)
 }
+
+type User struct {
+	firstName string
+	lastName  string
+	birthDate string
+	createdAt time.Time
+}
+
 func main() {
-	understandingPointers()
+	var newUser User = User{firstName: "Ali", lastName: "Seylaneh", birthDate: "1998", createdAt: time.Now()}
+	fmt.Println(newUser)
 }
