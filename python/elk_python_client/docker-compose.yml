@@ -17,7 +17,7 @@ services:
 
   logstash:
     image: logstash:8.13.0
-    container_name: _logstash
+    container_name: logstash_lab
     restart: always
     volumes:
       - ./logstash/:/logstash_dir
