@@ -20,8 +20,8 @@ services:
     container_name: logstash_lab
     restart: always
     volumes:
-      - ./logstash/:/logstash_dir
-    command: logstash -f /logstash_dir/logstash.conf
+      - logstash/logstash.conf:/etc/logstash/conf.d/logstash.conf
+    command: logstash -f /etc/logstash/conf.d/logstash.conf
     depends_on:
       - elasticsearch
     ports:
