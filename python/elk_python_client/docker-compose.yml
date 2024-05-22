@@ -10,10 +10,11 @@ services:
       - "9200:9200"
       - "9300:9300"
     environment:
-      - ES_JAVA_OPTS = "-Xmx256m -Xms256m"
+      - ES_JAVA_OPTS = "-Xms256m -Xmx2g"
       - discovery.type=single-node
       - xpack.security.enabled= false
       - xpack.security.enrollment.enabled= false
+    mem_limit: 1024m
 
   logstash:
     image: logstash:8.13.0
@@ -21,6 +22,7 @@ services:
     restart: always
     volumes:
       - ./logstash/logstash.conf:/etc/logstash/conf.d/logstash.conf
+      - ./logstash/:/var/log/apache/
     command: logstash -f /etc/logstash/conf.d/logstash.conf
     depends_on:
       - elasticsearch
@@ -28,6 +30,6 @@ services:
       - '9600:9600'
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
-
+    mem_limit: 1024m
 volumes:
   elastic-data:
