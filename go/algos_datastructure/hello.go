@@ -92,3 +92,7 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 	user := User{firstName: firstName, lastName: lastName, birthDate: birthDate, createdAt: time.Now()}
 	return &user
 }
+
+func main() {
+	just_a_package.PracticeArrays()
+}

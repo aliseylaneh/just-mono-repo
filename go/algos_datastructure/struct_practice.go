@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -14,8 +15,14 @@ type Product struct {
 	createdAt        time.Time
 }
 
+func (product *Product) createProductFile() {
+	file, _ := os.Create(product.name + ".txt")
+	content := fmt.Sprintf("ID: %v\nName: %v\nDescription: %v\n", product.id, product.name, product.shortDescription)
+	file.WriteString(content)
+	file.Close()
+}
 func (product *Product) viewProductDetail() {
-	fmt.Printf("Product Name: %v\nProduct Description: %v\n", product.name, product.shortDescription)
+	fmt.Printf("ID:%v,Product Name: %v\nProduct Description: %v\n", product.id, product.name, product.shortDescription)
 
 }
 func (product *Product) updateProduct(name string, shortDescription string) {
@@ -30,12 +37,12 @@ func createProduct(name string, shortDescription string) *Product {
 	return &product
 }
 
-func main() {
+func productStruct() {
 	name := "Tesla V2"
 	shortDescription := "This car company is Tesla and it's model is version 2"
 	var product *Product = createProduct(name, shortDescription)
 	product.viewProductDetail()
 	product.updateProduct("Tesla V3", "This car company is Tesla and it's model is version 3")
 	product.viewProductDetail()
-
+	product.createProductFile()
 }
