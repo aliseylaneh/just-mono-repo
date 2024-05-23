@@ -14,9 +14,9 @@ type Product struct {
 	createdAt        time.Time
 }
 
-func (product *Product) viewProductDetail() string {
-	var productDetails string = "Product Name: " + product.name + "\nProduct Description: " + product.shortDescription
-	return productDetails
+func (product *Product) viewProductDetail() {
+	fmt.Printf("Product Name: %v\nProduct Description: %v\n", product.name, product.shortDescription)
+
 }
 func (product *Product) updateProduct(name string, shortDescription string) {
 	product.name = name
@@ -32,10 +32,10 @@ func createProduct(name string, shortDescription string) *Product {
 
 func main() {
 	name := "Tesla V2"
-	shortDescription := "This car company is Tesla and it's model is version 3"
+	shortDescription := "This car company is Tesla and it's model is version 2"
 	var product *Product = createProduct(name, shortDescription)
-	fmt.Println(product.viewProductDetail())
+	product.viewProductDetail()
 	product.updateProduct("Tesla V3", "This car company is Tesla and it's model is version 3")
-	fmt.Println(product.viewProductDetail())
+	product.viewProductDetail()
 
 }
