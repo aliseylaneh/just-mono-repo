@@ -92,8 +92,3 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 	user := User{firstName: firstName, lastName: lastName, birthDate: birthDate, createdAt: time.Now()}
 	return &user
 }
-func main() {
-	var newUser *User = newUser("Franklin", "Joyce", "1989")
-	newUser.printUserDetails("This is test")
-	fmt.Println(newUser)
-}
