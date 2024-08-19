@@ -3,12 +3,11 @@ package main
 import (
 	"bufio"
 	"fmt"
+	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
 	"os"
 	"strconv"
 	"strings"
 	"time"
-
-	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
 )
 
 func greetings() {
@@ -94,5 +93,5 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 }
 
 func main() {
-	just_a_package.PracticeArrays()
+	productStruct()
 }
