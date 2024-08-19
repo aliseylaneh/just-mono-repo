@@ -21,7 +21,7 @@ type Product struct {
 }
 
 func (product *Product) createProductFile() {
-	file, _ := os.Create(product.name + ".txt")
+	file, _ := os.OpenFile(product.name+".txt", os.O_RDWR|os.O_APPEND|os.O_CREATE, 0660)
 	content := fmt.Sprintf("ID: %v\nName: %v\nDescription: %v\n", product.id, product.name, product.shortDescription)
 	file.WriteString(content)
 	file.Close()
@@ -67,5 +67,6 @@ func productStruct() {
 	var productNumberTwo *Product = createProduct("Tesla V3", "This is another models of Tesla")
 	productNumberTwo.viewProductDetail()
 	productNumberTwo.printProductDetails(product)
+	productNumberTwo.createProductFile()
 	product.getColor()
 }

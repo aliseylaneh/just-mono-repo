@@ -1,3 +1,0 @@
-ID: 1
-Name: Tesla V3
-Description: This car company is Tesla and it's model is version 3
