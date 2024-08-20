@@ -93,5 +93,5 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 }
 
 func main() {
-	just_a_package.PracticeArrays()
+	just_a_package.DynamicArrays()
 }

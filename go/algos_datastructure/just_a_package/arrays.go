@@ -17,3 +17,16 @@ func PracticeArrays() {
 	fmt.Println(cap(featureNames))
 
 }
+
+func DynamicArrays() {
+	prices := []float64{1, 2}
+	var mainPrices []float64
+	value := 0.0
+	for i := 0; i <= 10; i++ {
+		prices = append(prices, value)
+		mainPrices = append(prices, value)
+		value += 1
+		fmt.Println(value, i)
+	}
+	fmt.Println(mainPrices, prices)
+}
