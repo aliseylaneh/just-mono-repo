@@ -8,8 +8,12 @@ func PracticeArrays() {
 	fmt.Println(numbers)
 	fmt.Println(newNumbers)
 	var names [5]string = [5]string{"String", "Mohammad", "Ali", "Saman"}
-	fmt.Println(names[0])
-	featureNames := names[1:]
+	fmt.Println(names)
+	featureNames := names[:2]
 	fmt.Println(featureNames)
+	featureNames = featureNames[:3]
+	fmt.Println(featureNames)
+	fmt.Println(len(featureNames))
+	fmt.Println(cap(featureNames))
 
 }
