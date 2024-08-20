@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
+	product_package "github.com/aliseylaneh/just-mono-repo/product"
 	"os"
 	"strconv"
 	"strings"
@@ -93,5 +94,14 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 }
 
 func main() {
-	just_a_package.DynamicArrays()
+	var product *product_package.Product = product_package.CreateProduct("Launch Box", "This is used for your launch in your office")
+	productAggregate := product_package.NewProductAggregate(product)
+	var orders []product_package.Order
+	orderOne := product_package.CreateOrder("Order 1")
+	orderTwo := product_package.CreateOrder("Order 2")
+	orders = append(orders, *orderOne)
+	orders = append(orders, *orderTwo)
+	productAggregate.ChangeOrders(orders)
+	productAggregate.GetProductDetail()
+
 }
