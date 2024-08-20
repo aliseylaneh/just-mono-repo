@@ -52,12 +52,12 @@ func testingBufferIo() string {
 }
 func convertToFloatAndPrint(sentence string) {
 	sentence = strings.Replace(sentence, "\n", "", -1)
-	float_number, exception := strconv.ParseFloat(sentence, 64)
+	floatNumber, exception := strconv.ParseFloat(sentence, 64)
 	if exception != nil {
-		fmt.Println(float_number, exception)
+		fmt.Println(floatNumber, exception)
 		return
 	}
-	fmt.Println(float_number)
+	fmt.Println(floatNumber)
 }
 func changingValueByPoint(age *string) {
 	*age = "70"
