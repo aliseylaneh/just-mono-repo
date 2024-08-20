@@ -22,9 +22,9 @@ func greetings() {
 	print(finalCounter)
 }
 
-func concatinateTypes(defaultDataBaseUrl string, defaultDatabaseUserAndPort string) string {
-	concatinated := defaultDataBaseUrl + defaultDatabaseUserAndPort
-	return concatinated
+func concatenateTypes(defaultDataBaseUrl string, defaultDatabaseUserAndPort string) string {
+	concatenated := defaultDataBaseUrl + defaultDatabaseUserAndPort
+	return concatenated
 }
 
 func runeBoolByte() {
