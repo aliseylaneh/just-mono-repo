@@ -93,5 +93,5 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 }
 
 func main() {
-	productStruct()
+	just_a_package.PracticeArrays()
 }
