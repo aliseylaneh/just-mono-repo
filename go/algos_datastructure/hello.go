@@ -103,5 +103,5 @@ func main() {
 	//orders = append(orders, *orderTwo)
 	//productAggregate.ChangeOrders(orders)
 	//productAggregate.GetProductDetail()
-	just_a_package.SlicingArrays()
+	just_a_package.ImplementMaps()
 }
