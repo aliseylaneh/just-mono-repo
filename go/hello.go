@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
+	justAPackage "mono_repo/justAPackage"
 )
 
 func greetings() {
@@ -41,7 +41,7 @@ func printFormatting() {
 	fmt.Println(im_sprint_f)
 }
 func usingAnotherPackage() {
-	fmt.Println(just_a_package.GlobalVariable)
+	fmt.Println(justAPackage.GlobalVariable)
 }
 
 var reader = bufio.NewReader(os.Stdin)
@@ -103,5 +103,5 @@ func main() {
 	//orders = append(orders, *orderTwo)
 	//productAggregate.ChangeOrders(orders)
 	//productAggregate.GetProductDetail()
-	just_a_package.ImplementMaps()
+	justAPackage.ImplementMaps()
 }

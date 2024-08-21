@@ -1,3 +1,3 @@
-module github.com/aliseylaneh/just-mono-repo
+module mono_repo
 
 go 1.22.3
