@@ -3,12 +3,13 @@ package main
 import (
 	"bufio"
 	"fmt"
-	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
-	product_package "github.com/aliseylaneh/just-mono-repo/product"
 	"os"
 	"strconv"
 	"strings"
 	"time"
+
+	just_a_package "github.com/aliseylaneh/just-mono-repo/just_a_package"
+	product_package "github.com/aliseylaneh/just-mono-repo/product"
 )
 
 func greetings() {
@@ -19,7 +20,7 @@ func greetings() {
 		fmt.Println(greetingText)
 	}
 	finalCounter := counter
-	print(finalCounter)
+	fmt.Println(finalCounter)
 }
 
 func concatenateTypes(defaultDataBaseUrl string, defaultDatabaseUserAndPort string) string {
