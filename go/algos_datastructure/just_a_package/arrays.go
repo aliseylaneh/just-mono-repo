@@ -17,7 +17,15 @@ func PracticeArrays() {
 	fmt.Println(cap(featureNames))
 
 }
-
+func SlicingArrays() {
+	var names []string
+	var newNames []string
+	names = append(names, "Ali", "Mohammad", "Reza", "Ahmad")
+	newNames = names[2:3]
+	fmt.Println(newNames)
+	fmt.Println(len(newNames), cap(newNames))
+	fmt.Println(newNames[0:2])
+}
 func DynamicArrays() {
 	prices := []float64{1, 2}
 	var mainPrices []float64
