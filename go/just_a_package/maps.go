@@ -10,4 +10,6 @@ func ImplementMaps() {
 	fmt.Println(websites["Google"])
 	websites["LinkedIn"] = "https://linkedin.com"
 	fmt.Println(websites)
+	delete(websites, "LinkedIn")
+	fmt.Println(websites)
 }
