@@ -21,10 +21,12 @@ func SlicingArrays() {
 	var names []string
 	var newNames []string
 	names = append(names, "Ali", "Mohammad", "Reza", "Ahmad")
-	newNames = names[2:3]
+	newNames = names[2:4]
 	fmt.Println(newNames)
 	fmt.Println(len(newNames), cap(newNames))
 	fmt.Println(newNames[0:2])
+	names = append(names, newNames...)
+	fmt.Println(names)
 }
 func DynamicArrays() {
 	prices := []float64{1, 2}
