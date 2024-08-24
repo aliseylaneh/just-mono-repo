@@ -104,5 +104,9 @@ func main() {
 	//productAggregate.ChangeOrders(orders)
 	//productAggregate.GetProductDetail()
 	//justAPackage.ImplementMaps()
-	controlStructure.GetUserInput()
+	userAge, err := controlStructure.GetUserInput()
+	if err == nil {
+		controlStructure.ValidateAge(&userAge)
+	}
+	fmt.Println(userAge, err)
 }
