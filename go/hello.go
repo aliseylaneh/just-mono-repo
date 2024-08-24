@@ -3,12 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	controlStructure "mono_repo/controlStructure"
+	justAPackage "mono_repo/justAPackage"
 	"os"
 	"strconv"
 	"strings"
 	"time"
-
-	justAPackage "mono_repo/justAPackage"
 )
 
 func greetings() {
@@ -103,5 +103,6 @@ func main() {
 	//orders = append(orders, *orderTwo)
 	//productAggregate.ChangeOrders(orders)
 	//productAggregate.GetProductDetail()
-	justAPackage.ImplementMaps()
+	//justAPackage.ImplementMaps()
+	controlStructure.GetUserInput()
 }
