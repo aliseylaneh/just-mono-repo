@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
-	controlStructure "mono_repo/controlStructure"
 	justAPackage "mono_repo/justAPackage"
+	loops "mono_repo/loops"
 	"os"
 	"strconv"
 	"strings"
@@ -94,19 +94,20 @@ func newUser(firstName string, lastName string, birthDate string) *User {
 }
 
 func main() {
-	//var product *product_package.Product = product_package.CreateProduct("Launch Box", "This is used for your launch in your office")
-	//productAggregate := product_package.NewProductAggregate(product)
-	//var orders []product_package.Order
-	//orderOne := product_package.CreateOrder("Order 1")
-	//orderTwo := product_package.CreateOrder("Order 2")
-	//orders = append(orders, *orderOne)
-	//orders = append(orders, *orderTwo)
-	//productAggregate.ChangeOrders(orders)
-	//productAggregate.GetProductDetail()
-	//justAPackage.ImplementMaps()
-	userAge, err := controlStructure.GetUserInput()
-	if err == nil {
-		controlStructure.ValidateAge(&userAge)
-	}
-	fmt.Println(userAge, err)
+	////var product *product_package.Product = product_package.CreateProduct("Launch Box", "This is used for your launch in your office")
+	////productAggregate := product_package.NewProductAggregate(product)
+	////var orders []product_package.Order
+	////orderOne := product_package.CreateOrder("Order 1")
+	////orderTwo := product_package.CreateOrder("Order 2")
+	////orders = append(orders, *orderOne)
+	////orders = append(orders, *orderTwo)
+	////productAggregate.ChangeOrders(orders)
+	////productAggregate.GetProductDetail()
+	////justAPackage.ImplementMaps()
+	//userAge, err := controlStructure.GetUserInput()
+	//if err == nil {
+	//	controlStructure.ValidateAge(&userAge)
+	//}
+	//fmt.Println(userAge, err)
+	loops.StartProgram()
 }
