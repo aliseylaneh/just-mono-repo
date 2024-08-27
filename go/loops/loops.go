@@ -11,11 +11,12 @@ import (
 
 func getUserInput() (*int, error) {
 	reader := bufio.NewReader(os.Stdin)
-	inputValue, _ := reader.ReadString('\n')
-	inputValue = strings.Replace(inputValue, "\n", "", -1)
+	inputValue, _ := reader.ReadString('\r')
+	inputValue = strings.Replace(inputValue, "\r", "", -1)
 	inputNumber, err := strconv.ParseInt(inputValue, 0, 64)
 	outputNumber := int(inputNumber)
 	if err != nil {
+		fmt.Println(err)
 		myError := errors.New("invalid input")
 		return &outputNumber, myError
 	}
