@@ -36,6 +36,20 @@ func calculateSumUpTo() {
 	fmt.Println(sum)
 
 }
+func sumUpManually() {
+	fmt.Println("* Sum Up Manually Started *")
+	isEnteringNumbers := true
+	for isEnteringNumbers {
+		fmt.Print("Enter your number:")
+		inputValue, err := getUserInput()
+		sum := 0
+		if err != nil {
+			isEnteringNumbers = false
+		}
+		sum = sum + *inputValue
+
+	}
+}
 
 func StartProgram() {
 	fmt.Print("1) Calculate sum of numbers between two numbers\n" +
@@ -48,7 +62,9 @@ func StartProgram() {
 	}
 	if *choice == 1 {
 		calculateSumUpTo()
+	} else if *choice == 2 {
+		sumUpManually()
 	} else {
-		fmt.Println("Option is not available")
+		fmt.Println("No Option available")
 	}
 }
