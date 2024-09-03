@@ -39,16 +39,15 @@ func calculateSumUpTo() {
 func sumUpManually() {
 	fmt.Println("* Sum Up Manually Started *")
 	isEnteringNumbers := true
+	sum := 0
 	for isEnteringNumbers {
 		fmt.Print("Enter your number:")
 		inputValue, err := getUserInput()
-		sum := 0
-		if err != nil {
-			isEnteringNumbers = false
-		}
+		isEnteringNumbers = err == nil
 		sum = sum + *inputValue
-
 	}
+	fmt.Println(sum)
+
 }
 
 func StartProgram() {
