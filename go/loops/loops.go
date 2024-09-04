@@ -61,7 +61,7 @@ func calculateListSum() {
 		number, err := getUserInput()
 		if err != nil {
 			fmt.Println("Invalid Input !!")
-			return
+			continue
 		}
 		listOfNumbers = append(listOfNumbers, *number)
 	}
