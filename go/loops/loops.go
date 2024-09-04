@@ -44,7 +44,7 @@ func sumUpManually() {
 		fmt.Print("Enter your number:")
 		inputValue, err := getUserInput()
 		isEnteringNumbers = err == nil
-		sum = sum + *inputValue
+		sum = *inputValue + sum
 	}
 	fmt.Println(sum)
 
