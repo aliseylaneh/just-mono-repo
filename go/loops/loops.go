@@ -49,10 +49,34 @@ func sumUpManually() {
 	fmt.Println(sum)
 
 }
+func calculateListSum() {
+	fmt.Print("* List Sum Started *\nHow many numbers do you have?: ")
+	countOfNumber, err := getUserInput()
+	if err != nil {
+		return
+	}
+	var listOfNumbers []int
+	for i := 0; i < *countOfNumber; i++ {
+		fmt.Printf("Enter your %v number: ", i)
+		number, err := getUserInput()
+		if err != nil {
+			fmt.Println("Invalid Input !!")
+			return
+		}
+		listOfNumbers = append(listOfNumbers, *number)
+	}
+	sum := 0
+	for index, value := range listOfNumbers {
+		fmt.Printf("Index: %v, Value:%v\n", index, value)
+		sum = sum + value
+	}
+	fmt.Println(sum)
 
+}
 func StartProgram() {
 	fmt.Print("1) Calculate sum of numbers between two numbers\n" +
 		"2) Calculate the factorial of a number\n" +
+		"3) Calculate range of numbers within a list\n" +
 		"Enter your choice: ")
 	choice, err := getUserInput()
 	if err != nil {
@@ -63,6 +87,8 @@ func StartProgram() {
 		calculateSumUpTo()
 	} else if *choice == 2 {
 		sumUpManually()
+	} else if *choice == 3 {
+		calculateListSum()
 	} else {
 		fmt.Println("No Option available")
 	}
