@@ -14,5 +14,7 @@ func ShowAvailableActions(specialAttackAvailable bool) {
 		"2) Heal\n")
 	if specialAttackAvailable {
 		fmt.Print("3) Special Attack\n:")
+	} else {
+		fmt.Print(":")
 	}
 }

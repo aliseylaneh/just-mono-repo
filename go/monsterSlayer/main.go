@@ -22,6 +22,7 @@ func executeRound() string {
 	currentRound++
 	isSpecialRound := currentRound%3 == 0
 	interaction.ShowAvailableActions(isSpecialRound)
+	interaction.GetPlayerChoice(isSpecialRound)
 	return ""
 }
 func endGame() {
