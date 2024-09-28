@@ -1,3 +1,3 @@
-module monsterSlayer.com/v2
+module aliseylaneh/monsterSlayer
 
 go 1.22.3
