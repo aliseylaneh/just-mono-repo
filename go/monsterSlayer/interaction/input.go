@@ -22,7 +22,9 @@ func GetPlayerChoice(specialAttackAvailable bool) {
 	case "3":
 		if !specialAttackAvailable {
 			fmt.Println("Special Attack is not available")
+			break
 		}
+		fmt.Println("Special Attack Donnnnnnne!!")
 	default:
 		fmt.Println("Invalid Option")
 	}
