@@ -9,25 +9,26 @@ import (
 
 var reader = bufio.NewReader(os.Stdin)
 
-func GetPlayerChoice(specialAttackAvailable bool) {
+func GetPlayerChoice(specialAttackAvailable bool) string {
 	userInput, err := getPlayerInput()
 	if err != nil {
 		fmt.Printf("%v", err)
 	}
 	switch userInput {
 	case "1":
-		fmt.Println("Attack Monster")
+		return "ATTACK"
 	case "2":
-		fmt.Println("Heal")
+		return "HEAL"
 	case "3":
 		if !specialAttackAvailable {
 			fmt.Println("Special Attack is not available")
 			break
 		}
-		fmt.Println("Special Attack Donnnnnnne!!")
+		return "SPECIAL_ATTACK"
 	default:
-		fmt.Println("Invalid Option")
+		return "INVALID"
 	}
+	return ""
 }
 
 func getPlayerInput() (string, error) {

@@ -1,6 +1,9 @@
 package main
 
-import interaction "aliseylaneh/monsterSlayer/interaction"
+import (
+	actions "aliseylaneh/monsterSlayer/actions"
+	interaction "aliseylaneh/monsterSlayer/interaction"
+)
 
 var currentRound int = 0
 
@@ -22,7 +25,12 @@ func executeRound() string {
 	currentRound++
 	isSpecialRound := currentRound%3 == 0
 	interaction.ShowAvailableActions(isSpecialRound)
-	interaction.GetPlayerChoice(isSpecialRound)
+	userChoice := interaction.GetPlayerChoice(isSpecialRound)
+	if userChoice == "ATTACK" {
+		actions.AttackMonster(isSpecialRound)
+	} else if userChoice == "HEAL" {
+
+	}
 	return ""
 }
 func endGame() {
