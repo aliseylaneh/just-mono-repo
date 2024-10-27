@@ -64,3 +64,6 @@ func PrintingRoundStatistic(roundData *RoundData) {
 	fmt.Printf("Monster health: %v\n", roundData.MonsterHealth)
 
 }
+func InvalidAction() {
+	fmt.Println("Invalid action.")
+}

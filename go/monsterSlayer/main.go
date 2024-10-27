@@ -33,8 +33,11 @@ func executeRound() string {
 		playerAttackDmg = actions.AttackMonster(false)
 	} else if userChoice == "HEAL" {
 		playerHealValue = actions.HealPlayer()
-	} else {
+	} else if userChoice == "SPECIAL_ATTACK" {
 		playerAttackDmg = actions.AttackMonster(true)
+	} else {
+		interaction.InvalidAction()
+		return ""
 	}
 	monsterAttackDmg = actions.AttackPlayer()
 	monsterHealth, playerHealth := actions.GetHealthAmount()
