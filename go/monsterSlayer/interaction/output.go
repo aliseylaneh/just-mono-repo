@@ -67,3 +67,6 @@ func PrintingRoundStatistic(roundData *RoundData) {
 func InvalidAction() {
 	fmt.Println("Invalid action.")
 }
+func WriteLogFile(rounds *[]RoundData) {
+
+}
