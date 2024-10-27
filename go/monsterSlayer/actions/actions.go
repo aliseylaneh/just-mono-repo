@@ -19,10 +19,9 @@ func AttackMonster(isSpecialAttack bool) {
 	}
 	damageValue := generateRandomNumBetween(minAttackValue, maxAttackValue)
 	monsterHealth -= damageValue
-
 }
 
-func Heal() {
+func HealPlayer() {
 	minHealValue := PLAYER_HEAL_MIN_VALUE
 	maxHealValue := PLAYER_HEAL_MAX_VALUE
 	healValue := generateRandomNumBetween(minHealValue, maxHealValue)
@@ -33,6 +32,7 @@ func Heal() {
 		playerHealth = 100
 	}
 	playerHealth += PLAYER_HEALTH
+
 }
 
 func AttackPlayer() {
@@ -40,6 +40,10 @@ func AttackPlayer() {
 	maxAttackValue := MONSTER_ATTACK_MAX_DAMAGE
 	damageValue := generateRandomNumBetween(minAttackValue, maxAttackValue)
 	playerHealth -= damageValue
+}
+
+func GetHealthAmount() (int, int) {
+	return monsterHealth, playerHealth
 }
 func generateRandomNumBetween(min int, max int) int {
 	return randGenerator.Intn(max-min) + min
