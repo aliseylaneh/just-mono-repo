@@ -82,6 +82,9 @@ func WriteLogFile(rounds *[]RoundData) {
 	}
 	execPath = filepath.Dir(execPath)
 	file, err := os.Create(execPath + "/gamelog.txt")
+	// Below code is only used for the time you want to use built version of the application
+	//file, err := os.Create(execPath + "/gamelog.txt")
+
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("Saving a log file failed, Exiting...")
