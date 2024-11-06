@@ -36,7 +36,7 @@ func executeRound() string {
 		playerHealValue = actions.HealPlayer()
 	} else if userChoice == "SPECIAL_ATTACK" {
 		playerAttackDmg = actions.AttackMonster(true)
-	} else {
+	} else if userChoice == "INVALID" {
 		interaction.InvalidAction()
 		return ""
 	}

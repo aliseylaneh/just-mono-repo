@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/common-nighthawk/go-figure"
 	"os"
+	"path/filepath"
 )
 
 type RoundData struct {
@@ -74,7 +75,13 @@ func InvalidAction() {
 	fmt.Println("Invalid action.")
 }
 func WriteLogFile(rounds *[]RoundData) {
-	file, err := os.Create("gamelog.txt")
+	execPath, err := os.Executable()
+
+	if err != nil {
+		fmt.Println(err)
+	}
+	execPath = filepath.Dir(execPath)
+	file, err := os.Create(execPath + "/gamelog.txt")
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println("Saving a log file failed, Exiting...")
