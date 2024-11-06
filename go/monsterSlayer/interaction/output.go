@@ -2,6 +2,7 @@ package interaction
 
 import (
 	"fmt"
+	"github.com/common-nighthawk/go-figure"
 	"os"
 )
 
@@ -32,7 +33,8 @@ func NewRoundData(action string,
 }
 
 func PrintGreeting() {
-	fmt.Println("Monster Slayer")
+	myAscii := figure.NewFigure("Monster Slayer", "", true)
+	myAscii.Print()
 	fmt.Println("Starting new game...")
 	fmt.Println("Good luck.")
 }
@@ -49,7 +51,8 @@ func ShowAvailableActions(specialAttackAvailable bool) {
 }
 func DeclareWinner(winner string) {
 	fmt.Println("------------------------------")
-	fmt.Println("----------Game Over-----------")
+	gameOverAscii := figure.NewColorFigure("Game over", "", "red", true)
+	gameOverAscii.Print()
 	fmt.Println("------------------------------")
 	fmt.Printf("%v won :)\n", winner)
 }
