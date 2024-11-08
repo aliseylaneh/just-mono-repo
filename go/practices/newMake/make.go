@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func newMake() {
 
 	names := make([]string, 2, 3)
 	names[0] = "Jakob"
@@ -13,4 +13,8 @@ func main() {
 
 	fmt.Println(names)
 
+}
+
+func main() {
+	TryingNewFunction()
 }
