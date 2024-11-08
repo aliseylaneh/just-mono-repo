@@ -41,11 +41,11 @@ func useCase(structName string) (useCaseFunctionArgs, error) {
 	}
 
 }
-func myFunction(args ...string) {
-	fmt.Println(args)
+func myFunction(name string, phoneNumbers ...int) {
+	fmt.Println(name, phoneNumbers)
 }
 func main() {
-	myFunction()
+	myFunction("Ali", 12312, 123123, 123123)
 	journalFunctionUseCase, err := useCase("journal")
 	if err != nil {
 		return
