@@ -20,7 +20,13 @@ func testingOutDeffer() {
 	//	Or you can do below
 	defer file.Close()
 }
+func testingOutPanic() {
+	_, err := os.Open("data.txt")
+	if err != nil {
+		panic(err)
+	}
+}
 
 func main() {
-
+	testingOutPanic()
 }
