@@ -2,8 +2,10 @@ package main
 
 import "fmt"
 
-func handleUploadUseCase(id int, name string, useCase func(int, string) (int, string, string)) {
-	id, name, typeOfStruct := useCase(id, name)
+type useCaseFunctionArgs func(int, string) (int, string, string)
+
+func handleUploadUseCase(id int, name string, useCaseFunction useCaseFunctionArgs) {
+	id, name, typeOfStruct := useCaseFunction(id, name)
 	fmt.Printf("id: %v, name: %v, Type of Struct: %v\n", id, name, typeOfStruct)
 }
 
@@ -28,8 +30,27 @@ func productUseCase(id int, name string) (int, string, string) {
 	product := Product{id: id, name: name, color: "red"}
 	return product.id, product.name, "Product"
 }
+func useCase(structName string) (useCaseFunctionArgs, error) {
+	switch structName {
+	case "product":
+		return productUseCase, nil
+	case "journal":
+		return journalUseCase, nil
+	default:
+		return nil, fmt.Errorf("faild to find the usecase")
+	}
 
+}
 func main() {
-	handleUploadUseCase(10, "Journal of New York", journalUseCase)
-	handleUploadUseCase(24, "Neapolitan Pizza", productUseCase)
+
+	journalFunctionUseCase, err := useCase("journal")
+	if err != nil {
+		return
+	}
+	productFunctionUseCase, err := useCase("product")
+	if err != nil {
+		return
+	}
+	handleUploadUseCase(10, "Journal of New York", journalFunctionUseCase)
+	handleUploadUseCase(24, "Neapolitan Pizza", productFunctionUseCase)
 }
