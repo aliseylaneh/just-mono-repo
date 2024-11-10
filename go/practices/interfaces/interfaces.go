@@ -24,9 +24,14 @@ func printLog(data Logger) {
 	data.Log()
 }
 func main() {
-	var myType customType = "Ali Seylaneh"
-	printLog(myType)
-
-	product := Product{name: "Car"}
-	printLog(&product)
+	//var myType customType = "Ali Seylaneh"
+	//printLog(myType)
+	//
+	//product := Product{name: "Car"}
+	//printLog(&product)
+	log := LogWriter{schema: "cart", fileType: ".txt", fileName: "car"}
+	err := log.execute()
+	if err != nil {
+		panic(err)
+	}
 }
