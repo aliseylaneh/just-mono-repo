@@ -30,6 +30,11 @@ func checkInterfaceTypeAndExecute(value interface{}) {
 		if err != nil {
 			panic(err)
 		}
+	case []int:
+		newNumbers := append(val, val...)
+		fmt.Println("[Info] Just a Slice: ", newNumbers)
+	default:
+		fmt.Println("[Info] Nothing was processed.")
 	}
 }
 func main() {
@@ -39,5 +44,7 @@ func main() {
 	//product := Product{name: "Car"}
 	//printLog(&product)
 	log := LogWriter{schema: "car", fileType: ".txt", fileName: "car"}
+	checkInterfaceTypeAndExecute(nil)
+	checkInterfaceTypeAndExecute([]int{1, 2, 3, 4})
 	checkInterfaceTypeAndExecute(log)
 }
