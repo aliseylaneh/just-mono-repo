@@ -29,10 +29,17 @@ func (car *Car) extract() string {
 
 func (car *Car) write(fileName string, fileType string) error {
 	info := car.extract()
-	err := os.WriteFile(fileName+fileType, []byte(info), 0644)
+	file, err := os.Create(fileName + fileType)
 	if err != nil {
 		return err
 	}
+	defer func() {
+		closeFileError := file.Close()
+		if closeFileError != nil {
+			panic(closeFileError)
+		}
+	}()
+	file.WriteString(info)
 	return nil
 }
 func (file *LogWriter) logWriter(writer FileWriter) error {
