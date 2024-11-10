@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 )
 
@@ -41,14 +42,21 @@ func (file *LogWriter) logWriter(writer FileWriter) error {
 	}
 	return nil
 }
+func infoLog(value interface{}) {
+	val, ok := value.(*LogWriter)
+	if ok {
+		fmt.Printf("[Info] Operation for %v interface successful.\n", val)
+	}
+}
 func (file *LogWriter) execute() error {
 
 	if file.schema == "car" && file.fileType == ".txt" {
 		car := Car{name: "Audi", color: "Black"}
 		file.logWriter(&car)
+		infoLog(file)
 
 	} else {
-		err := InvalidSchemaFileTypeError{"Invalid schema and file type"}
+		err := InvalidSchemaFileTypeError{"[Error] Invalid schema and file type."}
 		return &err
 	}
 	return nil

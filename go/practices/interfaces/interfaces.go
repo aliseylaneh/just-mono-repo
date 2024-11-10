@@ -29,7 +29,7 @@ func main() {
 	//
 	//product := Product{name: "Car"}
 	//printLog(&product)
-	log := LogWriter{schema: "cart", fileType: ".txt", fileName: "car"}
+	log := LogWriter{schema: "car", fileType: ".txt", fileName: "car"}
 	err := log.execute()
 	if err != nil {
 		panic(err)
