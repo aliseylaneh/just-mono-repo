@@ -23,6 +23,15 @@ func (cType customType) Log() {
 func printLog(data Logger) {
 	data.Log()
 }
+func checkInterfaceTypeAndExecute(value interface{}) {
+	switch val := value.(type) {
+	case LogWriter:
+		err := val.execute()
+		if err != nil {
+			panic(err)
+		}
+	}
+}
 func main() {
 	//var myType customType = "Ali Seylaneh"
 	//printLog(myType)
@@ -30,8 +39,5 @@ func main() {
 	//product := Product{name: "Car"}
 	//printLog(&product)
 	log := LogWriter{schema: "car", fileType: ".txt", fileName: "car"}
-	err := log.execute()
-	if err != nil {
-		panic(err)
-	}
+	checkInterfaceTypeAndExecute(log)
 }
