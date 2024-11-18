@@ -45,7 +45,7 @@ func (car *Car) write(fileName string, fileType string) error {
 func (file *LogWriter) logWriter(writer FileWriter) error {
 	err := writer.write(file.fileName, file.fileType)
 	if err != nil {
-		err.Error()
+		fmt.Println(err.Error())
 	}
 	return nil
 }
