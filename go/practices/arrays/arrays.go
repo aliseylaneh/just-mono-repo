@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"maps"
 	"slices"
 )
 
@@ -26,6 +27,8 @@ func main() {
 	fmt.Println(nilMap)
 	// The comma ok idiom
 	customers := map[string]string{"A": "Ali", "B": "Jake"}
+	providers := map[string]string{"A": "Ali", "B": "Jake"}
+	fmt.Println(maps.Equal(customers, providers))
 	value, exists := customers["A"]
 	fmt.Println(value, exists)
 	value, exists = customers["C"]
