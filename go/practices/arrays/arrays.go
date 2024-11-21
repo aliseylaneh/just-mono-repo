@@ -22,7 +22,12 @@ func main() {
 	fmt.Println(slices.Equal(sliceXY, sliceYY))
 	// Maps
 	var nilMap map[string]int
-	nilMap["1"] = 1 // writing in nil map cause panic
+	//nilMap["1"] = 1 // writing in nil map cause panic
 	fmt.Println(nilMap)
-
+	// The comma ok idiom
+	customers := map[string]string{"A": "Ali", "B": "Jake"}
+	value, exists := customers["A"]
+	fmt.Println(value, exists)
+	value, exists = customers["C"]
+	fmt.Println(value, exists)
 }
