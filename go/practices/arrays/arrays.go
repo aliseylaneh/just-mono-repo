@@ -20,5 +20,9 @@ func main() {
 	sliceXY := []int{1, 2, 3, 4}
 	sliceYY := []int{1, 2, 3, 4}
 	fmt.Println(slices.Equal(sliceXY, sliceYY))
+	// Maps
+	var nilMap map[string]int
+	nilMap["1"] = 1 // writing in nil map cause panic
+	fmt.Println(nilMap)
 
 }
