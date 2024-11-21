@@ -36,4 +36,10 @@ func main() {
 	delete(customers, "B")
 	fmt.Println(customers)
 	clear(customers)
+	// Anonymous struct
+	pet := struct {
+		name string
+		kind string
+	}{name: "Flip", kind: "Cats"}
+	fmt.Println(pet)
 }
