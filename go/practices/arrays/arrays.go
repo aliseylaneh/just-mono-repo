@@ -30,4 +30,7 @@ func main() {
 	fmt.Println(value, exists)
 	value, exists = customers["C"]
 	fmt.Println(value, exists)
+	delete(customers, "B")
+	fmt.Println(customers)
+	clear(customers)
 }
