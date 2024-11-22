@@ -84,5 +84,5 @@ loop:
 			fmt.Println(word, "is exactly the right length.")
 		}
 	}
-
+	//goto loop // Never use go to
 }
