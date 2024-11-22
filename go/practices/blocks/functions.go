@@ -27,4 +27,9 @@ func main() {
 	} else {
 		fmt.Printf("%v is suitable number", n)
 	}
+	fmt.Println()
+	i := 5
+	for ; i >= 0; i++ {
+		fmt.Println(i)
+	}
 }
