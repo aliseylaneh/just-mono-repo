@@ -29,7 +29,11 @@ func main() {
 	}
 	fmt.Println()
 	i := 5
-	for ; i >= 0; i++ {
-		fmt.Println(i)
+	for ; i >= 0; i-- {
+		//fmt.Println(i)
+	}
+	evenVals := []int{2, 4, 6, 8, 10, 12}
+	for index, v := range evenVals {
+		fmt.Println(index, v)
 	}
 }
