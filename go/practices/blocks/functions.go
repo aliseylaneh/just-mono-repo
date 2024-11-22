@@ -11,4 +11,8 @@ func main() {
 		fmt.Println(x)
 	}
 	fmt.Println(x)
+	// Shadowing identifiers from universe block in go is forbidden and can cause various problems in your program
+	fmt.Println(true)
+	true := 10 // This is forbidden
+	fmt.Println(true)
 }
