@@ -32,8 +32,14 @@ func main() {
 	for ; i >= 0; i-- {
 		//fmt.Println(i)
 	}
-	evenVals := []int{2, 4, 6, 8, 10, 12}
-	for index, v := range evenVals {
-		fmt.Println(index, v)
+	evenVals := []int{2, 4, 6, 8, 10, 12} // evenVals declared and not used
+	_ = evenVals
+	customers := map[string]string{
+		"Ali":  "Developer",
+		"Jake": "Product manager",
+		"John": "QA",
+	}
+	for name, position := range customers {
+		fmt.Println(name, position)
 	}
 }
