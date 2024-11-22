@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
 	x := 10
@@ -15,4 +18,13 @@ func main() {
 	fmt.Println(true)
 	true := 10 // This is forbidden
 	fmt.Println(true)
+	// if statement
+	if n := rand.Intn(10); n == 0 { // You can declare variable depended and accessible on if condition scope
+		fmt.Printf("%v is low", n)
+	} else if n > 5 {
+		fmt.Printf("%v is too big", n)
+
+	} else {
+		fmt.Printf("%v is suitable number", n)
+	}
 }
