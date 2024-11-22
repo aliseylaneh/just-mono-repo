@@ -45,6 +45,8 @@ func main() {
 
 	}
 	samples := []string{"hello", "apple_π!"}
+
+	// Labeled For loops + switches + using break for switches and For loops
 outer:
 	for _, sample := range samples {
 		for i, r := range sample {
@@ -69,4 +71,18 @@ loop:
 			fmt.Println(i, "is boring")
 		}
 	}
+	// Blank Switches
+	words := []string{"hi", "salutations", "hello"}
+	for _, word := range words {
+		wordLen := len(word)
+		switch { // You can use it like -> "switch wordLen := len(word){" too.
+		case wordLen < 5:
+			fmt.Println(word, "is a short word!")
+		case wordLen > 10:
+			fmt.Println(word, "is a long word!")
+		default:
+			fmt.Println(word, "is exactly the right length.")
+		}
+	}
+
 }
