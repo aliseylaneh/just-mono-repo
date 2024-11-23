@@ -44,6 +44,11 @@ func useCase(structName string) (useCaseFunctionArgs, error) {
 func myFunction(name string, phoneNumbers ...int) {
 	fmt.Println(name, phoneNumbers)
 }
+
+func namedReturnedValues(name, address string) (processedName, processedAddress string) {
+	processedName, processedAddress = name, address
+	return processedName, processedAddress
+}
 func main() {
 	myFunction("Ali", 12312, 123123, 123123)
 	phoneNumbers := []int{123, 123, 123}
@@ -58,4 +63,6 @@ func main() {
 	}
 	handleUploadUseCase(10, "Journal of New York", journalFunctionUseCase)
 	handleUploadUseCase(24, "Neapolitan Pizza", productFunctionUseCase)
+	name, address := namedReturnedValues("Ali", "New York")
+	fmt.Println(name, address)
 }
