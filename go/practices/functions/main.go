@@ -65,6 +65,7 @@ func anonymousFunction() {
 		fmt.Println(name)
 	}
 	f("Ali")
+	defer f("A") // Anonymous functions are useful when it comes to defer and goroutines.
 }
 func main() {
 	myFunction("Ali", 12312, 123123, 123123)
