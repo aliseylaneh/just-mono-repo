@@ -65,7 +65,21 @@ func anonymousFunction() {
 		fmt.Println(name)
 	}
 	f("Ali")
-	defer f("A") // Anonymous functions are useful when it comes to defer and goroutines.
+	defer f("A")           // Anonymous functions are useful when it comes to defer and goroutines.
+	defer valueFunctions() // You can defer multiple time for multiple functions, but it's gonna be LAST IN FIRST OUT.
+}
+func deferExample() int {
+	a := 10
+	defer func(val int) {
+		fmt.Println("first:", val)
+	}(a)
+	a = 20
+	defer func(val int) {
+		fmt.Println("second:", val)
+	}(a)
+	a = 30
+	fmt.Println("exiting:", a)
+	return a
 }
 func main() {
 	myFunction("Ali", 12312, 123123, 123123)
@@ -85,4 +99,6 @@ func main() {
 	fmt.Println(name, address)
 	valueFunctions()
 	anonymousFunction()
+	a := deferExample()
+	fmt.Println(a)
 }
