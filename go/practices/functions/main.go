@@ -50,6 +50,16 @@ func namedReturnedValues(name, address string) (processedName, processedAddress 
 	return // Remember to never use an empty return while you have named return value, because when you do this it will
 	// return the latest assigned value to those named return values.
 }
+func f1(name string) string {
+	return name
+}
+func valueFunctions() {
+	// You can declare functions as value and then assign a function to that variable which is defined as function.
+	var useCaseFunctionArgsTwo func(string) string // zero value for a function is nil. Attempting to run a function
+	// with nil value will cause panic
+	useCaseFunctionArgsTwo = f1
+	fmt.Println(useCaseFunctionArgsTwo("Hello"))
+}
 func main() {
 	myFunction("Ali", 12312, 123123, 123123)
 	phoneNumbers := []int{123, 123, 123}
@@ -66,4 +76,5 @@ func main() {
 	handleUploadUseCase(24, "Neapolitan Pizza", productFunctionUseCase)
 	name, address := namedReturnedValues("Ali", "New York")
 	fmt.Println(name, address)
+	valueFunctions()
 }
