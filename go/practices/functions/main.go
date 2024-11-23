@@ -60,6 +60,12 @@ func valueFunctions() {
 	useCaseFunctionArgsTwo = f1
 	fmt.Println(useCaseFunctionArgsTwo("Hello"))
 }
+func anonymousFunction() {
+	f := func(name string) {
+		fmt.Println(name)
+	}
+	f("Ali")
+}
 func main() {
 	myFunction("Ali", 12312, 123123, 123123)
 	phoneNumbers := []int{123, 123, 123}
@@ -77,4 +83,5 @@ func main() {
 	name, address := namedReturnedValues("Ali", "New York")
 	fmt.Println(name, address)
 	valueFunctions()
+	anonymousFunction()
 }
