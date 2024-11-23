@@ -47,7 +47,8 @@ func myFunction(name string, phoneNumbers ...int) {
 
 func namedReturnedValues(name, address string) (processedName, processedAddress string) {
 	processedName, processedAddress = name, address
-	return processedName, processedAddress
+	return // Remember to never use an empty return while you have named return value, because when you do this it will
+	// return the latest assigned value to those named return values.
 }
 func main() {
 	myFunction("Ali", 12312, 123123, 123123)
