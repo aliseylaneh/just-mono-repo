@@ -19,6 +19,6 @@ func makePointer[T any](t T) *T {
 	return &t
 }
 func main() {
-	product := Product{name: makePointer("name"), address: "test"}
-	typeChecker(&product)
+	product := &Product{name: makePointer("name"), address: "test"}
+	fmt.Println(*product)
 }
