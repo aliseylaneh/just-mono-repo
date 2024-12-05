@@ -18,6 +18,12 @@ func typeChecker(arg interface{}) {
 func failedUpdate(g *int) {
 	x := 10
 	g = &x
+	fmt.Println(x)
+	fmt.Println(g)
+}
+func update(px *int) {
+	*px = 20
+
 }
 
 func makePointer[T any](t T) *T {
@@ -26,7 +32,9 @@ func makePointer[T any](t T) *T {
 func main() {
 	//product := &Product{name: makePointer("name"), address: "test"}
 	//fmt.Println(*product)
-	var g *int
-	failedUpdate(g)
+	var g int = 10
+	failedUpdate(&g)
+	fmt.Println(g)
+	update(&g)
 	fmt.Println(g)
 }
