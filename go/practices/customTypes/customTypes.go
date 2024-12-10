@@ -30,7 +30,7 @@ func (i Inventory) create(id string) {
 	//  No overloading is permitted for a same type methods
 }
 
-func (i Inventory) create(id string, name string) {
+func (i Person) create(id string, name string) {
 	//  No overloading is permitted for a same type methods
 }
 
