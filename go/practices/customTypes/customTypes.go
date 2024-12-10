@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 type Person struct {
 	name  string
@@ -17,13 +20,39 @@ func (number customInt) pow(power int) customInt {
 	}
 	return result
 }
+
+type Inventory struct {
+	id    string
+	stock uint
+}
+
+type inventories map[string]Inventory
+
+type getInventories func(id string) (Inventory, error)
+
 func main() {
-	var people personData = personData{
-		"Person Number one": Person{name: "Ali", phone: 2311},
+	//var people personData = personData{
+	//	"Person Number one": Person{name: "Ali", phone: 2311},
+	//}
+	//fmt.Println(people)
+	//var myNumber customInt = 2
+	//result := myNumber.pow(2)
+	//fmt.Println(result)
+	var myFunc getInventories = func(id string) (Inventory, error) {
+		listOfInventory := []Inventory{{id: "SKI-TEST", stock: 32}, {id: "SKU-2", stock: 44}}
+		for _, inventory := range listOfInventory {
+			if inventory.id == id {
+				return inventory, nil
+			}
+		}
+		return Inventory{}, errors.New("Inventory not found !!")
 	}
-	fmt.Println(people)
-	var myNumber customInt = 2
-	result := myNumber.pow(2)
-	fmt.Println(result)
+
+	inventory, err := myFunc("SKO-TEST")
+	if err == nil {
+		fmt.Println(inventory)
+	} else {
+		fmt.Println(err)
+	}
 
 }
