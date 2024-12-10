@@ -26,6 +26,14 @@ type Inventory struct {
 	stock uint
 }
 
+func (i Inventory) create(id string) {
+	//  No overloading is permitted for a same type methods
+}
+
+func (i Inventory) create(id string, name string) {
+	//  No overloading is permitted for a same type methods
+}
+
 type inventories map[string]Inventory
 
 type getInventories func(id string) (Inventory, error)
