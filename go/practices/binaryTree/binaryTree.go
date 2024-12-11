@@ -35,18 +35,18 @@ func (it *IntTree) contains(val int) bool {
 	}
 }
 func (it *IntTree) printElements(mainNode string, position string) {
-	rightValue := 0
-	leftValue := 0
+	rightValue := ""
+	leftValue := ""
 	if mainNode != "" {
 		mainNode = fmt.Sprintf("Current position is %v of main node %v, ", position, mainNode)
 	} else {
 		mainNode = ""
 	}
 	if it.right != nil {
-		rightValue = it.right.val
+		rightValue = fmt.Sprintf("%v", it.right.val)
 	}
 	if it.left != nil {
-		leftValue = it.left.val
+		leftValue = fmt.Sprintf("%v", it.left.val)
 	}
 	fmt.Printf("%v%v<-%v->%v\n", mainNode, rightValue, it.val, leftValue)
 	mainNode = strconv.Itoa(it.val)
