@@ -68,12 +68,14 @@ func main() {
 	//} else {
 	//	fmt.Println(err)
 	//}
-
-	var inventory Inventory
-	doUpdateWrong(inventory)
-	fmt.Println(inventory)
-	fmt.Println("-------")
-	doUpdateRight(&inventory)
-	fmt.Println(inventory)
-
+	//
+	//var inventory Inventory
+	//doUpdateWrong(inventory)
+	//fmt.Println(inventory)
+	//fmt.Println("-------")
+	//doUpdateRight(&inventory)
+	//fmt.Println(inventory)
+	myPerson := Person{name: "Ali", phone: 023}
+	f1 := Person.create
+	f1(myPerson, "test", "test") // This is method expression, you can pass type on that class as receiver and pass parameters as well
 }
