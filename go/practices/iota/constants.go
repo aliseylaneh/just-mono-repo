@@ -8,11 +8,12 @@ const (
 	JustAnotherValue
 )
 
-// Best practice for simulating an enumeration in go is defining a custom type and the defining const with this type and iota
+// Role Best practice for simulating an enumeration in go is defining a custom type
+// and the defining const with this type and iota
 type Role int
 
 const (
-	Admin Role = iota
+	Admin Role = iota + 1
 	User
 	Customer
 	Reviewer
