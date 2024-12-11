@@ -35,7 +35,6 @@ func (it *IntTree) contains(val int) bool {
 	}
 }
 func (it *IntTree) printElements(mainNode string, position string) {
-	// TODO needs refactor
 	rightValue := 0
 	leftValue := 0
 	if mainNode != "" {
