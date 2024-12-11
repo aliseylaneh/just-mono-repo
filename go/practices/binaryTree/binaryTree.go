@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 type IntTree struct {
 	val         int
@@ -31,17 +34,28 @@ func (it *IntTree) contains(val int) bool {
 		return true
 	}
 }
-func (it *IntTree) printElements() {
+func (it *IntTree) printElements(mainNode string, position string) {
 	// TODO needs refactor
-	fmt.Printf("Value is %v and children are: ->\n", it.val)
+	rightValue := 0
+	leftValue := 0
+	if mainNode != "" {
+		mainNode = fmt.Sprintf("Current position is %v of main node %v, ", position, mainNode)
+	} else {
+		mainNode = ""
+	}
 	if it.right != nil {
-		fmt.Printf("%v:Right:%v\n", it.val, it.right.val)
-		it.right.printElements()
+		rightValue = it.right.val
 	}
 	if it.left != nil {
-		fmt.Printf("%v:Left:%v\n", it.val, it.left.val)
-		it.left.printElements()
-
+		leftValue = it.left.val
+	}
+	fmt.Printf("%v%v<-%v->%v\n", mainNode, rightValue, it.val, leftValue)
+	mainNode = strconv.Itoa(it.val)
+	if it.right != nil {
+		it.right.printElements(mainNode, "right")
+	}
+	if it.left != nil {
+		it.left.printElements(mainNode, "left")
 	}
 }
 func main() {
@@ -52,6 +66,6 @@ func main() {
 	it = it.insert(2)
 	fmt.Println(it.contains(2))  // true
 	fmt.Println(it.contains(12)) // false
-	it.printElements()
+	it.printElements("", "top")
 
 }
