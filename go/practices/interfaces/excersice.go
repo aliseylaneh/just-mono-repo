@@ -8,5 +8,6 @@ type Incrementer interface {
 
 var myStringer fmt.Stringer
 var myIncrementer Incrementer
-pointerCounter := &Counter{}
-valueCounter := Counter{}
+
+//pointerCounter := &Counter{}
+//valueCounter := Counter{}
