@@ -37,14 +37,15 @@ func checkInterfaceTypeAndExecute(value interface{}) {
 		fmt.Println("[Info] Nothing was processed.")
 	}
 }
-func main() {
-	//var myType customType = "Ali Seylaneh"
-	//printLog(myType)
-	//
-	//product := Product{name: "Car"}
-	//printLog(&product)
-	log := LogWriter{schema: "car", fileType: ".txt", fileName: "car"}
-	checkInterfaceTypeAndExecute(nil)
-	checkInterfaceTypeAndExecute([]int{1, 2, 3, 4})
-	checkInterfaceTypeAndExecute(log)
-}
+
+//func main() {
+//	//var myType customType = "Ali Seylaneh"
+//	//printLog(myType)
+//	//
+//	//product := Product{name: "Car"}
+//	//printLog(&product)
+//	log := LogWriter{schema: "car", fileType: ".txt", fileName: "car"}
+//	checkInterfaceTypeAndExecute(nil)
+//	checkInterfaceTypeAndExecute([]int{1, 2, 3, 4})
+//	checkInterfaceTypeAndExecute(log)
+//}
