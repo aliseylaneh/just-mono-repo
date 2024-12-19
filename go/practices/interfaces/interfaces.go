@@ -39,13 +39,13 @@ func checkInterfaceTypeAndExecute(value interface{}) {
 }
 
 //func main() {
-//	//var myType customType = "Ali Seylaneh"
-//	//printLog(myType)
-//	//
-//	//product := Product{name: "Car"}
-//	//printLog(&product)
-//	log := LogWriter{schema: "car", fileType: ".txt", fileName: "car"}
-//	checkInterfaceTypeAndExecute(nil)
-//	checkInterfaceTypeAndExecute([]int{1, 2, 3, 4})
-//	checkInterfaceTypeAndExecute(log)
+//var myType customType = "Ali Seylaneh"
+//printLog(myType)
+//
+//product := Product{name: "Car"}
+//printLog(&product)
+//log := LogWriter{schema: "car", fileType: ".txt", fileName: "car"}
+//checkInterfaceTypeAndExecute(nil)
+//checkInterfaceTypeAndExecute([]int{1, 2, 3, 4})
+//checkInterfaceTypeAndExecute(log)
 //}
